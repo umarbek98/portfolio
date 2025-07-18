@@ -11,7 +11,11 @@ node_modules
 dist-ssr
 *.local
 
-# Environment variables
+# Build directory (not deployed to Hostinger)
+# Note: We copy dist contents to root for deployment
+dist/
+
+# Environment variables (add actual values in Hostinger panel)
 .env
 .env.local
 .env.production
@@ -26,3 +30,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Deployment artifacts (these are tracked for Hostinger)
+# index.html - production HTML file (tracked)
+# assets/ - production JS/CSS files (tracked)
+# .htaccess - server configuration (tracked)
+
+# Local deployment scripts (not pushed to repo)
+deploy.sh
+deploy-portfolio.sh
+DEPLOY.md
