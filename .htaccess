@@ -1,0 +1,33 @@
+# Hostinger compatible .htaccess
+RewriteEngine On
+
+# Set MIME types for common files
+AddType text/html .html .htm
+AddType text/css .css
+AddType application/javascript .js
+AddType application/json .json
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType image/gif .gif
+AddType image/svg+xml .svg
+AddType image/x-icon .ico
+AddType font/woff .woff
+AddType font/woff2 .woff2
+
+# Handle React Router (SPA routing)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Basic security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options SAMEORIGIN
+</IfModule>
+
+# Basic compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/javascript
+</IfModule>
