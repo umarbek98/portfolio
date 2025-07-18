@@ -40,3 +40,12 @@ dist/
 deploy.sh
 deploy-portfolio.sh
 DEPLOY.md
+
+# Old files that should never come back
+.env.production.example
+DEPLOYMENT.md
+debug.html
+mime-test.html
+package.hostinger.json
+root-test.html
+public/test.html
