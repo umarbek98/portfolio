@@ -16,7 +16,7 @@ export default defineConfig({
   plugins: [react(), removeModuleType()],
   base: "/", // Use absolute paths for deployment
   build: {
-    outDir: "dist",
+    outDir: "dist", // Output to dist directory
     assetsDir: "assets",
     sourcemap: false,
     target: "es2015", // Build for older browsers to avoid module issues
