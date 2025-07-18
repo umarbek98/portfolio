@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIME Test</title>
+</head>
+<body>
+    <h1>Testing JavaScript Loading</h1>
+    <div id="test-output"></div>
+    
+    <script>
+        // Regular script test
+        console.log('Regular script loaded successfully');
+        document.getElementById('test-output').innerHTML = '<p>✅ Regular JavaScript works</p>';
+        
+        // Test fetch to check if assets are accessible
+        fetch('./assets/')
+            .then(response => {
+                console.log('Assets folder response:', response.status);
+                document.getElementById('test-output').innerHTML += '<p>✅ Assets folder accessible: ' + response.status + '</p>';
+            })
+            .catch(error => {
+                console.error('Assets folder error:', error);
+                document.getElementById('test-output').innerHTML += '<p>❌ Assets folder error: ' + error.message + '</p>';
+            });
+            
+        // Test specific JS file
+        fetch('./assets/index-DQrTYSXY.js')
+            .then(response => {
+                console.log('JS file response:', response.status, 'Content-Type:', response.headers.get('content-type'));
+                document.getElementById('test-output').innerHTML += '<p>JS file status: ' + response.status + '</p>';
+                document.getElementById('test-output').innerHTML += '<p>Content-Type: ' + response.headers.get('content-type') + '</p>';
+            })
+            .catch(error => {
+                console.error('JS file error:', error);
+                document.getElementById('test-output').innerHTML += '<p>❌ JS file error: ' + error.message + '</p>';
+            });
+    </script>
+</body>
+</html>
