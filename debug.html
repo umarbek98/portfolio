@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Debug</title>
+</head>
+<body>
+    <h1>Portfolio Debug Page</h1>
+    <p>If you see this, the basic HTML is working.</p>
+    <p>Check if these files exist:</p>
+    <ul>
+        <li><a href="./index.html">Main index.html</a></li>
+        <li><a href="./assets/">Assets folder</a></li>
+        <li><a href="./favicon.svg">Favicon</a></li>
+    </ul>
+    
+    <script>
+        console.log('Debug page loaded');
+        fetch('./assets/')
+            .then(response => console.log('Assets accessible:', response.ok))
+            .catch(err => console.error('Assets not accessible:', err));
+    </script>
+</body>
+</html>
