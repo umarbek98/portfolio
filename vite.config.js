@@ -14,7 +14,7 @@ function removeModuleType() {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), removeModuleType()],
-  base: "./", // Use relative paths for deployment
+  base: "/", // Use absolute paths for deployment
   build: {
     outDir: "dist",
     assetsDir: "assets",
