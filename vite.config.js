@@ -4,13 +4,10 @@ import react from "@vitejs/plugin-react";
 // Plugin to remove type="module" from script tags
 function removeModuleType() {
   return {
-    name: 'remove-module-type',
+    name: "remove-module-type",
     transformIndexHtml(html) {
-      return html.replace(
-        /<script type="module"/g,
-        '<script'
-      );
-    }
+      return html.replace(/<script type="module"/g, "<script");
+    },
   };
 }
 
