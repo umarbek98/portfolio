@@ -1,0 +1,27 @@
+# Alternative .htaccess for Hostinger if the main one doesn't work
+RewriteEngine On
+
+# Force correct MIME types
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+    AddType application/javascript .mjs
+    AddType text/css .css
+    AddType application/json .json
+    AddType image/svg+xml .svg
+    AddType text/html .html
+</IfModule>
+
+# Handle ES6 modules specifically
+<FilesMatch "\.(js|mjs)$">
+    Header set Content-Type "application/javascript"
+</FilesMatch>
+
+# Single Page Application routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
