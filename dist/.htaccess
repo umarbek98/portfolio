@@ -6,7 +6,9 @@ RewriteEngine On
     # JavaScript files
     AddType application/javascript .js
     AddType application/javascript .mjs
+    AddType application/javascript .jsx
     AddType text/javascript .js
+    AddType text/javascript .jsx
     
     # CSS files
     AddType text/css .css
@@ -22,6 +24,10 @@ RewriteEngine On
     ForceType application/javascript
 </Files>
 
+<Files "*.jsx">
+    ForceType application/javascript
+</Files>
+
 <Files "*.css">
     ForceType text/css
 </Files>
@@ -30,6 +36,7 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteCond %{REQUEST_URI} !\.(jsx?|css|png|jpg|jpeg|gif|ico|svg|woff2?|ttf|otf)$
 RewriteRule . /index.html [L]
 
 # Security headers
