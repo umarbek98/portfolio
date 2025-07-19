@@ -14,6 +14,7 @@ dist-ssr
 # Build directory (not deployed to Hostinger)
 # Note: We copy dist contents to root for deployment
 dist/
+dist
 
 # Environment variables (add actual values in Hostinger panel)
 .env

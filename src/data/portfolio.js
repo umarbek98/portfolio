@@ -81,7 +81,7 @@ export const portfolioData = {
       liveDemo:
         "https://66a90966c6eb853eca24f16e--profound-figolla-8bab65.netlify.app/",
       sourceCode: "https://github.com/umarbek98/ShopSter",
-      featured: true,
+      featured: false,
     },
     //petcenter project
     {
@@ -96,6 +96,19 @@ export const portfolioData = {
       liveDemo: "https://fabulous-medovik-bf375f.netlify.app/",
       sourceCode: "https://github.com/umarbek98/petcenter",
       featured: false,
+    },
+    {
+      id: 4,
+      title: "Personality Quiz App",
+      description:
+        "An interactive personality quiz web application with dynamic scoring and personalized results.",
+      longDescription:
+        "The Personality Quiz App is an engaging web application that assesses users' personality traits through a series of carefully crafted questions. Built with vanilla JavaScript, HTML5, and CSS3, the app features a clean, intuitive interface with smooth transitions and animations. Users progress through multiple-choice questions, with each answer contributing to their final personality profile. The application includes dynamic scoring algorithms, personalized result pages with detailed descriptions, and responsive design for optimal experience across all devices. The quiz incorporates modern UX principles with progress indicators, animated transitions, and mobile-first responsive design, making it both educational and entertaining.",
+      technologies: ["JavaScript", "HTML5", "CSS3", "Responsive Design"],
+      image: "/src/assets/images/personality.png",
+      liveDemo: "https://silly-medovik-0354ef.netlify.app/",
+      sourceCode: "https://github.com/umarbek98/personality-quiz-app",
+      featured: true,
     },
   ],
 };
